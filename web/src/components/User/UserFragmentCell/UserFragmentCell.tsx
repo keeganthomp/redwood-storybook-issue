@@ -12,6 +12,7 @@ export const QUERY = gql`
   query FindUserById($id: Int!) {
     user: user(id: $id) {
       ...UserFragment
+      __typename
     }
   }
   ${USER_FRAGMENT}
@@ -26,5 +27,6 @@ export const Failure = ({ error }: any) => (
 )
 
 export const Success = ({ user }: CellSuccessProps<any>) => {
-  return <div>{JSON.stringify(user)}</div>
+  const { __typename, ...restOfUser } = user
+  return <div>{JSON.stringify(restOfUser)}</div>
 }

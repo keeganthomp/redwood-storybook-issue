@@ -12,6 +12,7 @@ export const generated = () => {
         id: 1,
         name: 'Redwood Blog',
         email: '2021-01-01T00:00:00.000Z',
+        __typename: 'User',
       },
     }
   })
